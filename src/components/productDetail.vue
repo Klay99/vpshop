@@ -42,7 +42,7 @@
     <!-- 按钮组 -->
     <div class="carAndOrder">
       <div @click="addProductToCar" align="center" class="car">加入购物车</div>
-      <div align="center" class="order">添加到收藏栏</div>
+      <div @click="updateCreateTime" align="center" class="order">添加到收藏栏</div>
     </div>
 
   </div>
@@ -60,6 +60,19 @@
       }
     },
     methods: {
+      updateCreateTime:function(id){
+        var date = new Date()
+        this.$http({
+          url: "/product/updateProduct",
+          method: 'put',
+          data: {
+            "id": 10,
+            "createTime": date
+          }
+        }).then(res=>{
+          console.log(res)
+        })
+      },
       getProductById: function(id) {
         this.$http('/product/getProductById/' + id).then(res => { // 用=>运算符可以在内部使用this
           console.log(res)
