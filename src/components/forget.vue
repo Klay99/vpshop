@@ -33,6 +33,7 @@
 
 	export default{
 		name:'forget',
+    // authCode: '',
 		data(){
 			return{
         email:''
@@ -45,7 +46,14 @@
 					console.log(res)
 					if(res.data.code==200){
 						that.$mui.toast(res.data.msg)
-						that.$router.push('/user/login')
+            // that.authCode = res.data.content
+						that.$router.push({
+              path: '/user/authentication',
+              query: {
+                authCode: res.data.content,
+                email: that.email
+              }
+            })
 					}else{
 						that.$mui.toast(res.data.msg)
 					}

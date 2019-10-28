@@ -15,6 +15,8 @@ import orderDetail from '@/components/orderDetail'
 import productDetail from '@/components/productDetail'
 import pay from '@/components/pay'
 import logisticsDetail from '@/components/logisticsDetail'
+import resetPW from '@/components/resetPW'
+import authentication from '@/components/authentication'
 
 Vue.use(Router)
 
@@ -93,7 +95,18 @@ export default new Router({
 		  path: '/logisticsDetail',
 		  name: 'logisticsDetail',
 		  component: logisticsDetail
+		},
+		{
+		  path: '/user/resetPW',
+		  name: 'resetPW',
+		  component: resetPW
+		},
+		{
+		  path: '/user/authentication',
+		  name: 'authentication',
+		  component: authentication
 		}
+
 
   ]
 })
