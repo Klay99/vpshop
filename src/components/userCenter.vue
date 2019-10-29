@@ -98,6 +98,14 @@
           console.log(err)
         })
       },
+      getUserById: function(id) {
+        this.$http('/user/getUserById/' + id).then(res => {
+          this.userInfo = res.data.content
+        }).catch(err =>{
+          this.$mui.toast('获取用户信息失败')
+          console.log(err)
+        })
+      },
       logout: function() {
         // this.$deleteCookie('token')
         this.$deleteCookie('username')
@@ -121,7 +129,14 @@
         0) {
         this.getUserInfo()
       } else {
-        this.$router.push('/user/login')
+        var id = this.$route.params.id
+        var username = this.$route.params.username
+        if(id != null && username != null) {
+          this.getUserById(id)
+          this.$setCookie('username', username)
+        } else{
+          this.$router.push('/user/login')
+        }
       }
     }
 

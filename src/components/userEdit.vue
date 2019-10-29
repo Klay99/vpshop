@@ -58,10 +58,11 @@
       saveUser: function() {
         var that = this
         delete this.userInfo.roleId
+        console.log(this.userInfo)
         this.$http({
           method: 'put',
           url: '/user/updateUser',
-          data: that.userInfo,
+          data: that.userInfo
           // data: {
           //   that.userInfo
           // },
@@ -77,7 +78,15 @@
               that.$router.push('/user/login')
               that.$mui.toast('密码已经更改，请重新登录')
             } else {
-              that.$router.push('/userCenter')
+              var username = that.$getCookie('username')
+              that.$deleteCookie('username')
+              that.$router.push({
+                name: 'userCenter',
+                params: {
+                  id: that.userInfo.id,
+                  username: that.userInfo.username
+                }
+              })
             }
           } else {
             that.$mui.toast('修改失败，原因：' + res.data.msg)
@@ -105,9 +114,9 @@
             console.log('upload success')
             // that.$mui.alert('头像上传成功')
             that.userInfo.headImg = (that.$http.defaults.baseURL + "/static/" + e.target.files[0].name)
-            that.$mui.alert('头像上传成功', '微品商城', function() {
-              that.saveUser()
-            });
+            // that.$mui.alert('头像上传成功', '微品商城', function() {
+            //   that.saveUser()
+            // });
           })
         }
       }
