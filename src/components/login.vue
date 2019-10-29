@@ -2,9 +2,8 @@
 
 	<div>
 
-
-		<header class="mui-bar mui-bar-nav">
-      <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <header class="mui-bar mui-bar-nav">
+      <a class="mui-icon mui-pull-left" @click="toHome()"><</a>
 			<h1 class="mui-title">登录</h1>
 		</header>
 		<div class="mui-content">
@@ -17,16 +16,6 @@
 					<label>密码</label>
 					<input id='password' v-model="password" type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
 				</div>
-			</form>
-			<form class="mui-input-group">
-				<ul class="mui-table-view mui-table-view-chevron">
-					<li class="mui-table-view-cell">
-						自动登录
-						<div id="autoLogin" class="mui-switch">
-							<div class="mui-switch-handle"></div>
-						</div>
-					</li>
-				</ul>
 			</form>
 			<div class="mui-content-padded">
 				<button id='login' @click="login()" class="mui-btn mui-btn-block mui-btn-primary">登录</button>
@@ -83,7 +72,10 @@
 			},
 			toForget:function(){
 				this.$router.push({path:'/forget'})
-			}
+			},
+      toHome: function() {
+        this.$router.push('/')
+      }
 		}
 
 	}

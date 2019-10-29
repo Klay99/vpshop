@@ -7,7 +7,7 @@ import mui from '../static/mui/js/mui.min.js'
 import '../static/mui/css/mui.min.css'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost:9090'
+axios.defaults.baseURL = 'http://localhost:9090' // 47.93.252.104:20200
 Vue.prototype.$http = axios
 Vue.prototype.$mui = mui
 // 添加全局用户信息

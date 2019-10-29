@@ -8,7 +8,7 @@
           <a class="icon_logo"></a>
           <form>
             <span class="icon_search"></span>
-            <input type="search" placeholder="占位符">
+            <input type="search" placeholder="搜索">
           </form>
           <a v-if="isLogin=='登出'" id="menu" href="#topPopover" class="login mui-action-menu mui-pull-right">
             <img v-if="userInfo.headImg!=''" :src="userInfo.headImg" />
@@ -141,10 +141,10 @@
                 <span>0</span>
               </div>
             </div>
-            <div class="f_right"><a @click="toShopList" class="m_r10">更多&gt;</a></div>
+            <div class="f_right"><a @click="toCategory()" class="m_r10">更多&gt;</a></div>
           </div>
           <div class="con">
-            <ul class="pro clearFix">
+            <ul @click="toCategory()" class="pro clearFix">
               <li>
                 <a><img src="../assets/images/detail01.jpg" alt=""></a>
                 <p class="nowPrice">&yen;10.00</p>
@@ -173,9 +173,9 @@
             <h3>京东超市</h3>
           </div>
           <div class="con clearFix">
-            <a class="w_50p f_left br"><img src="../assets/images/cp1.jpg" alt=""></a>
-            <a class="w_50p f_right bb"><img src="../assets/images/cp2.jpg" alt=""></a>
-            <a class="w_50p f_right"><img src="../assets/images/cp3.jpg" alt=""></a>
+            <a @click="toCategory()" class="w_50p f_left br"><img src="../assets/images/cp1.jpg" alt=""></a>
+            <a @click="toCategory()" class="w_50p f_right bb"><img src="../assets/images/cp2.jpg" alt=""></a>
+            <a @click="toCategory()" class="w_50p f_right"><img src="../assets/images/cp3.jpg" alt=""></a>
           </div>
         </section>
         <section class="jd_product_box">
@@ -183,9 +183,9 @@
             <h3>京东自营</h3>
           </div>
           <div class="con clearFix">
-            <a class="w_50p f_right bl"><img src="../assets/images/cp4.jpg" alt=""></a>
-            <a class="w_50p f_left bb"><img src="../assets/images/cp5.jpg" alt=""></a>
-            <a class="w_50p f_left"><img src="../assets/images/cp6.jpg" alt=""></a>
+            <a @click="toCategory()" class="w_50p f_right bl"><img src="../assets/images/cp4.jpg" alt=""></a>
+            <a @click="toCategory()" class="w_50p f_left bb"><img src="../assets/images/cp5.jpg" alt=""></a>
+            <a @click="toCategory()" class="w_50p f_left"><img src="../assets/images/cp6.jpg" alt=""></a>
           </div>
         </section>
         <section class="jd_product_box">
@@ -193,9 +193,9 @@
             <h3>京东热门</h3>
           </div>
           <div class="con clearFix">
-            <a class="w_50p f_left br"><img src="../assets/images/cp1.jpg" alt=""></a>
-            <a class="w_50p f_right bb"><img src="../assets/images/cp2.jpg" alt=""></a>
-            <a class="w_50p f_right"><img src="../assets/images/cp3.jpg" alt=""></a>
+            <a @click="toCategory()" class="w_50p f_left br"><img src="../assets/images/cp1.jpg" alt=""></a>
+            <a @click="toCategory()" class="w_50p f_right bb"><img src="../assets/images/cp2.jpg" alt=""></a>
+            <a @click="toCategory()" class="w_50p f_right"><img src="../assets/images/cp3.jpg" alt=""></a>
           </div>
         </section>
       </div>
